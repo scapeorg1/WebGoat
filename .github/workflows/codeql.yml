@@ -72,9 +72,13 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        config-file: ScapeSpeed/security-team-codeql-config/codeql/codeql-config.yml  
-        external-repository-token: ${{ secrets.ACCESS_TOKEN }}        
-        config: |
+        # repository: 'YourOrg/security-team-codeql-config'
+        # path: 'codeql/codeql-config.yml'
+        # ref: 'main'  # Specify the branch (optional)
+        # token: ${{ secrets.ACCESS_TOKEN }}
+        config-file: 'ScapeSpeed/security-team-codeql-config/codeql/codeql-config.yml'
+        external-repository-token: ${{ secrets.ACCESS_TOKEN }}
+        # config: |
         #  paths-ignore:
         #    - '**/*.test.js'
         #  queries:
