@@ -68,9 +68,9 @@ jobs:
     - name: Checkout CodeQL config repository
       uses: actions/checkout@v4
       with:
-        repository: 'ScapeSpeed/security-team-codeql-config'
+        repository: 'scapeorg1/security-team-codeql-config'
         ref: 'main'
-        # token: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
