@@ -69,6 +69,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: 'scapeorg1/security-team-codeql-config'
+        path: 'security-team-codeql-config'
         ref: 'main'
         token: ${{ secrets.ACCESS_TOKEN }}
     - name: Initialize CodeQL
