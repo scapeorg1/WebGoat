@@ -68,16 +68,17 @@ jobs:
     #   uses: actions/setup-example@v1
 
     # Initializes the CodeQL tools for scanning.
+    - name: Checkout CodeQL config repository
+      uses: actions/checkout@v4
+      with:
+        repository: 'ScapeSpeed/security-team-codeql-config'
+        path: 'codeql'
+        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        # repository: 'YourOrg/security-team-codeql-config'
-        # path: 'codeql/codeql-config.yml'
-        # ref: 'main'  # Specify the branch (optional)
-        # token: ${{ secrets.ACCESS_TOKEN }}
-        config-file: 'ScapeSpeed1/security-team-codeql-config/codeql/codeql-config.yml'
-        external-repository-token: ${{ secrets.ACCESS_TOKEN }}
+        config-file: 'security-team-codeql-config/codeql/codeql-config.yml'
         # config: |
         #  paths-ignore:
         #    - '**/*.test.js'
