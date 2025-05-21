@@ -71,7 +71,7 @@ jobs:
         repository: 'scapeorg1/security-team-codeql-config'
         path: 'security-team-codeql-config'
         ref: 'main'
-        token: ${{ secrets.ACCESS_TOKEN }}
+        # token: ${{ secrets.ACCESS_TOKEN }}
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
